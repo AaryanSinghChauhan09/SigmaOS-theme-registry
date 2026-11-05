@@ -1,0 +1,6 @@
+[component]
+name = "SigmaOS-theme-registry"
+tier = 3
+description = "Desktop theme registry, CSS variable generator, and theme switcher database"
+contracts = ['theme-registry', 'theme-manifest-parser', 'dark-mode-orchestrator']
+upstream_inspirations = ['https://github.com/omacom/omarchy-theme-registry']
