@@ -1,4 +1,6 @@
-# Omarchy Theme Registry
+# SigmaOS Theme Registry
+
+> Forked from [omacom/omarchy-theme-registry](https://github.com/omacom/omarchy-theme-registry) (MIT). See `SIGMAOS_FORK.md`.
 
 The list of community themes behind [themes.omarchy.org](https://themes.omarchy.org). Every theme here is a public GitHub repository that `omarchy theme install` can clone; this repo only records which ones are listed, checks them automatically, and publishes the catalog that the website reads.
 
