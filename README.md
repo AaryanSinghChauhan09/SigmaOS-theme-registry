@@ -93,3 +93,11 @@ just upload-dry               # what would go to R2 (needs R2_* in .env)
 ```
 
 Rules live in `packages/validator/src/validate.ts`; constants mirrored from `omacom/omarchy` in `packages/schema/src/constants.ts`. Change behaviour there, with a test.
+## Documentation
+
+Detailed Wiki documentation is available in the standalone Wiki repository:
+
+- [SigmaOS-theme-registry-Wiki](https://github.com/AaryanSinghChauhan09/SigmaOS-theme-registry-Wiki) - Full Wiki documentation
+
+For the complete SigmaOS Wiki catalog, see:
+- [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
