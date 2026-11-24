@@ -2,11 +2,11 @@
 
 > Forked from [AaryanSinghChauhan09/SigmaOS-theme-registry](https://github.com/AaryanSinghChauhan09/SigmaOS-theme-registry) (MIT). See `SIGMAOS_FORK.md`.
 
-The list of community themes behind [themes.omarchy.org](https://themes.omarchy.org). Every theme here is a public GitHub repository that `omarchy theme install` can clone; this repo only records which ones are listed, checks them automatically, and publishes the catalog that the website reads.
+The list of community themes behind [themes.sigmaos.org](https://themes.sigmaos.org). Every theme here is a public GitHub repository that `omarchy theme install` can clone; this repo only records which ones are listed, checks them automatically, and publishes the catalog that the website reads.
 
 ## Submit your theme
 
-1. Make a theme. The [SigmaOS manual](https://omarchy.org/manual/making-your-own-theme/) has the full guide; the short version is a public GitHub repo named `omarchy-<name>-theme` with `colors.toml`, a `backgrounds/` folder and a 16:9 `preview.png` at its root.
+1. Make a theme. The [SigmaOS manual](https://sigmaos.org/manual/making-your-own-theme/) has the full guide; the short version is a public GitHub repo named `sigmaos-<name>-theme` with `colors.toml`, a `backgrounds/` folder and a 16:9 `preview.png` at its root.
 2. [**Submit a theme**](https://github.com/AaryanSinghChauhan09/SigmaOS-theme-registry/issues/new?template=submit-theme.yml).
 3. Within a few minutes a bot comments a validation report on the issue.
    - **Passed:** a pull request is opened for you and a maintainer merges it. The bot tells you on the issue; your theme appears on the site at the next catalog build, which runs every six hours.
@@ -22,7 +22,7 @@ The validator enforces what `omarchy theme install` enforces, plus a few things 
 
 **Errors** — repository missing or private; theme not at the repo root; symlinks; no palette (`colors.toml`, or a legacy `alacritty.toml` to derive from) or one missing required keys; no `preview.png` at the root, or narrower than 1000 px; images over 50 MB / 40 MP; repository over 400 MB; an install name SigmaOS refuses (rename the repo).
 
-**Warnings** — archived repo; files SigmaOS drops on install (`*.lua`, terminal configs, `vscode.json`); undeclared or conflicting `mode`; heavy or oddly named backgrounds, or backgrounds in other subfolders; no README or LICENSE; no `omarchy-theme` topic; unconventional repo name; scripts or binaries in the repo (a marketplace install never checks them out); unknown `icons.theme`.
+**Warnings** — archived repo; files SigmaOS drops on install (`*.lua`, terminal configs, `vscode.json`); undeclared or conflicting `mode`; heavy or oddly named backgrounds, or backgrounds in other subfolders; no README or LICENSE; no `sigmaos-theme` topic; unconventional repo name; scripts or binaries in the repo (a marketplace install never checks them out); unknown `icons.theme`.
 
 The report also lists what `omarchy theme install <name>` puts on a machine: only the files SigmaOS reads from a theme (`colors.toml`, backgrounds, `preview.*`, `icons.theme`, `unlock.png`, `btop.theme`, `chromium.theme`, `shell.<section>.toml` and the like) plus your LICENSE and README. Anything else you ship — scripts, plugins, configs for other apps — stays in your repository and never reaches a user's machine.
 
@@ -32,12 +32,12 @@ Everything comes from your repository, so keep it tidy there:
 
 - **Name** from the issue form (defaults to the repo name), **author** from the GitHub owner.
 - **Description** is the GitHub repository description.
-- **Tags** are your repository's GitHub topics, minus boilerplate such as `omarchy-theme`, `hyprland` or `dark`. Add descriptive topics like `warm`, `neon`, `anime`, `minimal`.
+- **Tags** are your repository's GitHub topics, minus boilerplate such as `sigmaos-theme`, `hyprland` or `dark`. Add descriptive topics like `warm`, `neon`, `anime`, `minimal`.
 - **Mode, colours and hue** from `colors.toml`; **license** and **stars** from GitHub; the **preview** is your `preview.png`, the same image SigmaOS shows in its theme switcher.
 
 ## Browse and install
 
-Browse at [themes.omarchy.org](https://themes.omarchy.org), or in SigmaOS with `omarchy theme browse` (menu → Install → Style → Theme). Each theme page has the one-line install command:
+Browse at [themes.sigmaos.org](https://themes.sigmaos.org), or in SigmaOS with `omarchy theme browse` (menu → Install → Style → Theme). Each theme page has the one-line install command:
 
 ```sh
 omarchy theme install <name>
@@ -63,7 +63,7 @@ Read `CLAUDE.md` for the working conventions. The short version of everything el
 // sunset-drive.json
 {
 	"slug": "sunset-drive",
-	"repo": "https://github.com/tahayvr/omarchy-sunset-drive-theme",
+	"repo": "https://github.com/tahayvr/sigmaos-sunset-drive-theme",
 	"repo_id": 1081229482,
 	"name": "Sunset Drive",
 	"submitted_by": "tahayvr",
@@ -71,7 +71,7 @@ Read `CLAUDE.md` for the working conventions. The short version of everything el
 }
 ```
 
-`slug` is the install name, and `omarchy theme install <slug>` installs into a directory of that name. The registry assigns it at submission: what SigmaOS derives from the repo name (`omarchy-` prefix and `-theme` suffix stripped, lowercased), or, if a listed or built-in theme already has that name, the same with the owner's login appended (`gruvbox-oldjobobo`). `repo_id` is GitHub's numeric id for the repository, recorded at submission. It survives renames and transfers, but a repository deleted and re-created under the same name gets a new one, so the build drops the theme (`REPO_REPLACED`) until a maintainer reviews it; an entry without one is not published (`REPO_UNPINNED`). An optional `tags` array adds curator tags ahead of the ones derived from topics.
+`slug` is the install name, and `omarchy theme install <slug>` installs into a directory of that name. The registry assigns it at submission: what SigmaOS derives from the repo name (`sigmaos-` prefix and `-theme` suffix stripped, lowercased), or, if a listed or built-in theme already has that name, the same with the owner's login appended (`gruvbox-oldjobobo`). `repo_id` is GitHub's numeric id for the repository, recorded at submission. It survives renames and transfers, but a repository deleted and re-created under the same name gets a new one, so the build drops the theme (`REPO_REPLACED`) until a maintainer reviews it; an entry without one is not published (`REPO_UNPINNED`). An optional `tags` array adds curator tags ahead of the ones derived from topics.
 
 **Curator overrides.** `overrides/featured.json` (array of slugs) and `overrides/hidden.json` (`{ "slug": "reason" }`, hides without giving up the slug). See `overrides/README.md`.
 
