@@ -1,16 +1,16 @@
-# Omarchy Theme Registry
+# SigmaOS Theme Registry
 
-Source of truth for the community themes listed on **themes.omarchy.org**. One small JSON file per theme goes in (`themes/<slug>.json`), a validated catalog and processed preview images come out and are uploaded to Cloudflare R2. The website (`../omarchy-marketplace-site`, Rails) and later the Omarchy CLI only ever read the published catalog; nothing here talks to the site's database.
+Source of truth for the community themes listed on **themes.sigmaos.org**. One small JSON file per theme goes in (`themes/<slug>.json`), a validated catalog and processed preview images come out and are uploaded to Cloudflare R2. The website (`../SigmaOS-theme-marketplace`, Rails) and later the SigmaOS CLI only ever read the published catalog; nothing here talks to the site's database.
 
 ## Working rules
 
 - **Never `git commit` or `git push`.** Leave changes in the working tree and report them; the user reviews and commits. Applies to every repo in this project.
 - Branch is `master` (no `main`). Workflows and `validate.ts --changed` diff against `origin/master`.
-- **`preview.png` at the repo root is mandatory** (`PREVIEW_MISSING` is an error). Omarchy's theme switcher shows that exact file, so the site must too; never add fallbacks to wallpapers or other images.
+- **`preview.png` at the repo root is mandatory** (`PREVIEW_MISSING` is an error). SigmaOS's theme switcher shows that exact file, so the site must too; never add fallbacks to wallpapers or other images.
 - Never write the R2 dev URL (`pub-*.r2.dev`) into README, examples, docs or code. It lives only in the gitignored `.env` and the GitHub environment `R2-dev` (`CDN_BASE_URL`, `R2_BUCKET`, `R2_*` secrets).
 - TypeScript is pinned to 6.x because typescript-eslint does not support 7 yet; do not bump it.
-- Mirror Omarchy, don't reinvent: slug derivation, denied-on-install files, the files a marketplace install checks out (`INSTALLED_THEME_FILES`, mirroring the sparse-checkout patterns in `omarchy-theme-install`), background extensions and palette keys are copied from `omacom/omarchy` into `packages/schema/src/constants.ts`. Change behaviour there, with a test.
-- A theme may ship anything it likes in its repository; Omarchy's sparse checkout decides what a marketplace install puts on disk, and `facts.installed_files` only reports it. Do not add denylist-style errors for scripts or other non-theme content.
+- Mirror SigmaOS, don't reinvent: slug derivation, denied-on-install files, the files a marketplace install checks out (`INSTALLED_THEME_FILES`, mirroring the sparse-checkout patterns in the SigmaOS theme install), background extensions and palette keys are copied from the SigmaOS reference into `packages/schema/src/constants.ts`. Change behaviour there, with a test.
+- A theme may ship anything it likes in its repository; SigmaOS's sparse checkout decides what a marketplace install puts on disk, and `facts.installed_files` only reports it. Do not add denylist-style errors for scripts or other non-theme content.
 - If files change on disk from outside the session, say so and wait for instructions rather than fixing them.
 
 ## Layout
