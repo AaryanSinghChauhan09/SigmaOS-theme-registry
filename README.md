@@ -2,7 +2,7 @@
 
 > Forked from [AaryanSinghChauhan09/SigmaOS-theme-registry](https://github.com/AaryanSinghChauhan09/SigmaOS-theme-registry) (MIT). See `SIGMAOS_FORK.md`.
 
-The list of community themes behind [themes.sigmaos.org](https://themes.sigmaos.org). Every theme here is a public GitHub repository that `omarchy theme install` can clone; this repo only records which ones are listed, checks them automatically, and publishes the catalog that the website reads.
+The list of community themes behind [themes.sigmaos.org](https://themes.sigmaos.org). Every theme here is a public GitHub repository that `sigmaos theme install` can clone; this repo only records which ones are listed, checks them automatically, and publishes the catalog that the website reads.
 
 ## Submit your theme
 
@@ -18,13 +18,13 @@ If a change breaks the theme (or the repository goes missing), it drops off the 
 
 ### What gets checked
 
-The validator enforces what `omarchy theme install` enforces, plus a few things that make a good listing. Errors block; warnings are shown on your theme page as hints.
+The validator enforces what `sigmaos theme install` enforces, plus a few things that make a good listing. Errors block; warnings are shown on your theme page as hints.
 
 **Errors** — repository missing or private; theme not at the repo root; symlinks; no palette (`colors.toml`, or a legacy `alacritty.toml` to derive from) or one missing required keys; no `preview.png` at the root, or narrower than 1000 px; images over 50 MB / 40 MP; repository over 400 MB; an install name SigmaOS refuses (rename the repo).
 
 **Warnings** — archived repo; files SigmaOS drops on install (`*.lua`, terminal configs, `vscode.json`); undeclared or conflicting `mode`; heavy or oddly named backgrounds, or backgrounds in other subfolders; no README or LICENSE; no `sigmaos-theme` topic; unconventional repo name; scripts or binaries in the repo (a marketplace install never checks them out); unknown `icons.theme`.
 
-The report also lists what `omarchy theme install <name>` puts on a machine: only the files SigmaOS reads from a theme (`colors.toml`, backgrounds, `preview.*`, `icons.theme`, `unlock.png`, `btop.theme`, `chromium.theme`, `shell.<section>.toml` and the like) plus your LICENSE and README. Anything else you ship — scripts, plugins, configs for other apps — stays in your repository and never reaches a user's machine.
+The report also lists what `sigmaos theme install <name>` puts on a machine: only the files SigmaOS reads from a theme (`colors.toml`, backgrounds, `preview.*`, `icons.theme`, `unlock.png`, `btop.theme`, `chromium.theme`, `shell.<section>.toml` and the like) plus your LICENSE and README. Anything else you ship — scripts, plugins, configs for other apps — stays in your repository and never reaches a user's machine.
 
 ### What shows up on the theme page
 
@@ -37,13 +37,13 @@ Everything comes from your repository, so keep it tidy there:
 
 ## Browse and install
 
-Browse at [themes.sigmaos.org](https://themes.sigmaos.org), or in SigmaOS with `omarchy theme browse` (menu → Install → Style → Theme). Each theme page has the one-line install command:
+Browse at [themes.sigmaos.org](https://themes.sigmaos.org), or in SigmaOS with `sigmaos theme browse` (menu → Install → Style → Theme). Each theme page has the one-line install command:
 
 ```sh
-omarchy theme install <name>
+sigmaos theme install <name>
 ```
 
-Installing by name checks out the commit the registry validated, and only the files SigmaOS reads; `omarchy theme update` moves it to the next validated commit.
+Installing by name checks out the commit the registry validated, and only the files SigmaOS reads; `sigmaos theme update` moves it to the next validated commit.
 
 ## Something wrong with a listed theme?
 
@@ -71,7 +71,7 @@ Read `CLAUDE.md` for the working conventions. The short version of everything el
 }
 ```
 
-`slug` is the install name, and `omarchy theme install <slug>` installs into a directory of that name. The registry assigns it at submission: what SigmaOS derives from the repo name (`sigmaos-` prefix and `-theme` suffix stripped, lowercased), or, if a listed or built-in theme already has that name, the same with the owner's login appended (`gruvbox-oldjobobo`). `repo_id` is GitHub's numeric id for the repository, recorded at submission. It survives renames and transfers, but a repository deleted and re-created under the same name gets a new one, so the build drops the theme (`REPO_REPLACED`) until a maintainer reviews it; an entry without one is not published (`REPO_UNPINNED`). An optional `tags` array adds curator tags ahead of the ones derived from topics.
+`slug` is the install name, and `sigmaos theme install <slug>` installs into a directory of that name. The registry assigns it at submission: what SigmaOS derives from the repo name (`sigmaos-` prefix and `-theme` suffix stripped, lowercased), or, if a listed or built-in theme already has that name, the same with the owner's login appended (`gruvbox-oldjobobo`). `repo_id` is GitHub's numeric id for the repository, recorded at submission. It survives renames and transfers, but a repository deleted and re-created under the same name gets a new one, so the build drops the theme (`REPO_REPLACED`) until a maintainer reviews it; an entry without one is not published (`REPO_UNPINNED`). An optional `tags` array adds curator tags ahead of the ones derived from topics.
 
 **Curator overrides.** `overrides/featured.json` (array of slugs) and `overrides/hidden.json` (`{ "slug": "reason" }`, hides without giving up the slug). See `overrides/README.md`.
 
