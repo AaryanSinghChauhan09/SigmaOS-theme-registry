@@ -101,3 +101,17 @@ Detailed Wiki documentation is available in the standalone Wiki repository:
 
 For the complete SigmaOS Wiki catalog, see:
 - [SigmaOS Wiki Staging](https://github.com/AaryanSinghChauhan09/sigmaos-wiki-staging)
+
+## See Also
+
+Related SigmaOS **Desktop** repositories:
+
+- [SigmaOS-shell](../SigmaOS-shell/README.md) — SigmaOS desktop shell
+- [SigmaOS-shell-config](../SigmaOS-shell-config/README.md) — SigmaOS shell configuration
+- [SigmaOS-deskland](../SigmaOS-deskland/README.md) — SigmaOS Deskland desktop environment
+- [SigmaOS-hyprland-titlebars](../SigmaOS-hyprland-titlebars/README.md) — SigmaOS Hyprland titlebars
+- [SigmaOS-sddm](../SigmaOS-sddm/README.md) — SigmaOS display manager theme & config
+- [SigmaOS-ui](../SigmaOS-ui/README.md) — SigmaOS UI toolkit
+- [SigmaOS-theme-marketplace](../SigmaOS-theme-marketplace/README.md) — SigmaOS theme marketplace
+- [SigmaOS-themes-loops](../SigmaOS-themes-loops/README.md) — SigmaOS animated theme loops
+- [SigmaOS-themes-intros](../SigmaOS-themes-intros/README.md) — SigmaOS boot & login theme intros
